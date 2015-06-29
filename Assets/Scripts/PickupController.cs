@@ -3,14 +3,14 @@ using System.Collections;
 
 public class PickupController : MonoBehaviour {
 
-	public int size;
-
+	public float size;
+	public float playerSizeNeeded;
+	
 
 
 	// Use this for initialization
 	void Start () {
 
-	
 
 	}
 	

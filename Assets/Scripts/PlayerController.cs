@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Physics.gravity = new Vector3(0, -25.0F, 0);
+
 	}
 	
 	// Update is called once per frame
