@@ -41,8 +41,8 @@ public class PlayerController : MonoBehaviour {
 
 	
 		//add torque gives a nice rotation vs input feel however is not moving the player effectively
-		//rigidbody.AddTorque (Vector3.right * vInput, ForceMode.Force);
-		//rigidbody.AddTorque(Vector3.forward * -hInput , ForceMode.Force);
+		rigidbody.AddTorque (Vector3.right * vInput, ForceMode.Force);
+		rigidbody.AddTorque(Vector3.forward * -hInput , ForceMode.Force);
 	
 	}
 

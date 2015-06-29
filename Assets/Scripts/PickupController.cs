@@ -6,15 +6,17 @@ public class PickupController : MonoBehaviour {
 	public int size;
 
 
+
 	// Use this for initialization
 	void Start () {
 	
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+
 	}
 
 
@@ -24,7 +26,8 @@ public class PickupController : MonoBehaviour {
 		Debug.Log ("boop");
 		if (collision.gameObject.tag == "Player") {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
-			//gameObject.collider.enabled = false;
+			GetComponentInChildren<Collider> ();
+			collider.enabled = false;
 		}
 
 		//if(collision.gameObject.tag == "Player")
