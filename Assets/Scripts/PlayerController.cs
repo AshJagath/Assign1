@@ -19,15 +19,15 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-	void onCollisionEnter(Collision collider){
+	//void onCollisionEnter(Collision collider){
 		
 		
-		if(gameObject.tag == "Sticky")
-		{transform.parent = transform; } 
+		//if(gameObject.tag == "Sticky")
+		//{transform.parent = transform; } 
 		
 		
 		
-	}
+	//}
 
 	void FixedUpdate(){
 

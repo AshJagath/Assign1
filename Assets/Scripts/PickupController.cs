@@ -22,15 +22,13 @@ public class PickupController : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 
 		Debug.Log ("boop");
+		if (collision.gameObject.tag == "Player") {
+			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
+			//gameObject.collider.enabled = false;
+		}
 
-		//transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
-		//gameObject.collider.enabled = false;
-
-		if(collision.gameObject.tag == "Player")
-		{
-			transform.parent = GameObject.FindGameObjectWithTag("Player").transform; 
-		
-		} 
+		//if(collision.gameObject.tag == "Player")
+		//{			transform.parent = GameObject.FindGameObjectWithTag("Player").transform; } 
 
 
 
