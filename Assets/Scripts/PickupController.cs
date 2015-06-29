@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StickyController : MonoBehaviour {
+public class PickupController : MonoBehaviour {
 
 	public int size;
 
@@ -22,8 +22,11 @@ public class StickyController : MonoBehaviour {
 	void onCollisionEnter(Collision collider){
 
 
-		if(gameObject.tag == "Sticky")
-		{transform.parent = transform; } 
+		transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
+		gameObject.collider.enabled = false;
+
+		//if(gameObject.tag == "Sticky")
+		//{transform.parent = transform; } 
 
 
 
