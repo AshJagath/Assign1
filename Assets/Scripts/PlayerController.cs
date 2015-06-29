@@ -5,12 +5,12 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 100;
 	public float turnSpeed = 10;
-
+	public int BallSize;
 
 
 	// Use this for initialization
 	void Start () {
-		Physics.gravity = new Vector3(0, -1.0F, 0);
+		Physics.gravity = new Vector3(0, -25.0F, 0);
 	}
 	
 	// Update is called once per frame

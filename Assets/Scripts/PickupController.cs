@@ -9,6 +9,7 @@ public class PickupController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 	
 
 	}
@@ -26,8 +27,8 @@ public class PickupController : MonoBehaviour {
 		Debug.Log ("boop");
 		if (collision.gameObject.tag == "Player") {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
-			GetComponentInChildren<Collider> ();
-			collider.enabled = false;
+			GetComponentInChildren<Collider> ().enabled = false;
+			//collider.enabled = false;
 		}
 
 		//if(collision.gameObject.tag == "Player")
