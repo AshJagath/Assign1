@@ -19,14 +19,18 @@ public class PickupController : MonoBehaviour {
 
 
 
-	void onCollisionEnter(Collision collider){
+	void OnCollisionEnter(Collision collision){
 
+		Debug.Log ("boop");
 
-		transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
-		gameObject.collider.enabled = false;
+		//transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
+		//gameObject.collider.enabled = false;
 
-		//if(gameObject.tag == "Sticky")
-		//{transform.parent = transform; } 
+		if(collision.gameObject.tag == "Player")
+		{
+			transform.parent = GameObject.FindGameObjectWithTag("Player").transform; 
+		
+		} 
 
 
 
