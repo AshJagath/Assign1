@@ -4,7 +4,7 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	public float playerSize;
-
+	public float gravity = 25;
 
 
 
@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
 
 		//initialise gravity value
-		Physics.gravity = new Vector3(0, -25, 0);
+		Physics.gravity = new Vector3(0, -gravity, 0);
 
 		//Load the UIOverlay
 		LoadOverlay ();

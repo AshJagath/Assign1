@@ -25,6 +25,7 @@ public class PickupController : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 
 		Debug.Log ("boop");
+
 		if (collision.gameObject.tag == "Player") {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
 			GetComponentInChildren<Collider> ().enabled = false;

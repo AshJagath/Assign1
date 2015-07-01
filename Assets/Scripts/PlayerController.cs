@@ -17,17 +17,26 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 	
 
+
 	}
 
-	//void onCollisionEnter(Collision collider){
+	void OnCollisionEnter(Collision collision){
 		
+		Debug.Log ("bump");
 		
-		//if(gameObject.tag == "Sticky")
-		//{transform.parent = transform; } 
+		//if (collision.gameObject.tag == "PickUp" && BallSize >= ) {
+
+			//collider.enabled = false;
+		//}
+		
+		//if(collision.gameObject.tag == "Player")
+		//{transform.parent = GameObject.FindGameObjectWithTag("Player").transform; } 
 		
 		
 		
 	//}
+
+	}
 
 	void FixedUpdate(){
 
