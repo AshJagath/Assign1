@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PickupController : MonoBehaviour {
 
-	public float size;
+
 	public float playerSizeNeeded;
+	public float GrowthSize;
 
 
 
@@ -31,8 +32,9 @@ public class PickupController : MonoBehaviour {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
 			GetComponentInChildren<Collider> ().enabled = false;
 			//collider.enabled = false;
-		
-			GameObject.FindGameObjectWithTag ("Player").transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
+
+			//
+			GameObject.FindGameObjectWithTag ("Player").transform.localScale += new Vector3(GrowthSize, GrowthSize, GrowthSize);
 		}
 
 		//if(collision.gameObject.tag == "Player")
