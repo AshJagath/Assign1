@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 100;
 	public float turnSpeed = 10;
 	public int BallSize;
-
+	private GameObject Player;
 
 	// Use this for initialization
 	void Start () {
+
+		Player = GameObject.FindGameObjectWithTag ("Player");
 
 	}
 	
@@ -54,6 +56,16 @@ public class PlayerController : MonoBehaviour {
 		rigidbody.AddTorque(Vector3.forward * -hInput , ForceMode.Force);
 	
 	}
+
+	 public void GrowPlayer(){
+
+		Debug.Log ("GrowPlayer");
+			
+
+	}
+
+
+
 
 
 }

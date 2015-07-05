@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour {
 
 	void LoadOverlay(){
 	
-		Application.LoadLevelAdditive("UIOverlay");
+		//Application.LoadLevelAdditive("UIOverlay");
 	
 	}
 
