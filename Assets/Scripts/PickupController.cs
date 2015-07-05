@@ -30,7 +30,9 @@ public class PickupController : MonoBehaviour {
 
 		if (collision.gameObject.tag == "Player") {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
-			GetComponentInChildren<Collider> ().enabled = false;
+			Destroy(rigidbody);
+
+			//GetComponentInChildren<Collider> ().enabled = false;
 			//collider.enabled = false;
 
 			//
