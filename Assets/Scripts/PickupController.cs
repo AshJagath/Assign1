@@ -5,7 +5,8 @@ public class PickupController : MonoBehaviour {
 
 
 	public float playerSizeNeeded;
-	public float GrowthSize;
+	public float growthRate;
+	public Transform playerTransform;
 
 
 
@@ -13,11 +14,16 @@ public class PickupController : MonoBehaviour {
 	void Start () {
 
 
+		playerTransform=GameObject.FindWithTag("Player").GetComponent<Transform> ();
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	
+		Debug.Log (playerTransform.transform.localScale.magnitude);
+	
 	
 
 	}
@@ -28,15 +34,15 @@ public class PickupController : MonoBehaviour {
 
 		Debug.Log ("boop");
 
-		if (collision.gameObject.tag == "Player") {
+		if (collision.gameObject.tag == "Player" && playerTransform.transform.localScale.magnitude >= playerSizeNeeded) {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
 			Destroy(rigidbody);
 
 			//GetComponentInChildren<Collider> ().enabled = false;
 			//collider.enabled = false;
 
-			//
-			GameObject.FindGameObjectWithTag ("Player").transform.localScale += new Vector3(GrowthSize, GrowthSize, GrowthSize);
+			//increase the player objects scale by the pickup items growth rate
+			GameObject.FindGameObjectWithTag ("Player").transform.localScale += new Vector3(growthRate, growthRate, growthRate);
 		}
 
 		//if(collision.gameObject.tag == "Player")

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-	public float playerSize;
+
 	public float gravity;
 
 
