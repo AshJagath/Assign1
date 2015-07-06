@@ -36,6 +36,8 @@ public class PickupController : MonoBehaviour {
 
 		if (collision.gameObject.tag == "Player" && playerTransform.transform.localScale.magnitude >= playerSizeNeeded) {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
+
+			//remove the rigidbody of the picked up item to prevent physics issues
 			Destroy(rigidbody);
 
 			//GetComponentInChildren<Collider> ().enabled = false;
