@@ -5,7 +5,9 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 100;
 	public float turnSpeed = 10;
-	public int BallSize;
+	//public int BallSize;
+	public GameObject model;
+
 	//private GameObject Player;
 
 	// Use this for initialization
