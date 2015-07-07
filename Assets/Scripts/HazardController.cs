@@ -14,7 +14,7 @@ public class HazardController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		playerTransform=GameObject.FindWithTag("Player").GetComponent<Transform> ();
+		playerTransform=FindObjectOfType<PlayerController>().GetComponent<Transform> ();
 
 		player = GameObject.FindWithTag ("Player");
 	
@@ -22,7 +22,8 @@ public class HazardController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+		// fiond the local scale of the model component in the player
 		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
 
 	}

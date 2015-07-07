@@ -6,7 +6,9 @@ public class SeekerEnemy : MonoBehaviour {
 	public Transform target;
 	public float speed = 5f;
 	public float chaseDistance = 3f;
-
+	private float distanceToplayer;
+	private Transform playerPosition;
+	private 
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +18,9 @@ public class SeekerEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		playerPosition = FindObjectOfType<PlayerController> ().model.transform;
+
+		//distanceToplayer = Vector3.Distance (transform.position, playerPosition);
 	}
 
 
