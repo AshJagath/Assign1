@@ -6,7 +6,7 @@ public class PickupController : MonoBehaviour {
 
 	public float playerSizeNeeded;
 	public float growthRate;
-	public Transform playerTransform;
+	public Component playerTransform;
 
 
 
@@ -14,7 +14,7 @@ public class PickupController : MonoBehaviour {
 	void Start () {
 
 
-		playerTransform=GameObject.FindWithTag("Player").GetComponent<Transform> ();
+		playerTransform = FindObjectOfType<PlayerController>();
 
 
 	}
@@ -22,7 +22,7 @@ public class PickupController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		Debug.Log (playerTransform.transform.localScale.magnitude);
+		Debug.Log (FindObjectOfType<PlayerController>().model.transform.localScale.magnitude);
 	
 	
 
