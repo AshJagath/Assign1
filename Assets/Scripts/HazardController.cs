@@ -6,9 +6,10 @@ public class HazardController : MonoBehaviour {
 	public float playerSizeNeeded;
 	public Transform playerTransform;
 	public GameObject player;
+	private Vector3 playerScale;
 	public float explosForce;
 	public float explosRadius;
-	public float growthRate;
+	public float damage;
 
 	// Use this for initialization
 	void Start () {
@@ -16,12 +17,13 @@ public class HazardController : MonoBehaviour {
 		playerTransform=GameObject.FindWithTag("Player").GetComponent<Transform> ();
 
 		player = GameObject.FindWithTag ("Player");
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-
+		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
 
 	}
 
@@ -43,11 +45,11 @@ public class HazardController : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 
 	
-		if (collision.gameObject.tag == "Player" && playerTransform.transform.localScale.magnitude < playerSizeNeeded) {
+		if (collision.gameObject.tag == "Player" && playerScale.magnitude < playerSizeNeeded) {
 
 			Detach();		
 
-			FindObjectOfType<PlayerController>().model.transform.localScale += new Vector3(growthRate, growthRate, growthRate);
+			FindObjectOfType<PlayerController>().model.transform.localScale += new Vector3(damage, damage, damage);
 
 			}
 

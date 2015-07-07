@@ -14,13 +14,12 @@ public class PickupController : MonoBehaviour {
 	void Start () {
 
 
-		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
-
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
 
 	
