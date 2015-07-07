@@ -6,7 +6,7 @@ public class PickupController : MonoBehaviour {
 
 	public float playerSizeNeeded;
 	public float growthRate;
-	public Component playerTransform;
+	private Vector3 playerScale;
 
 
 
@@ -14,15 +14,17 @@ public class PickupController : MonoBehaviour {
 	void Start () {
 
 
-		playerTransform = FindObjectOfType<PlayerController>();
+		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
 
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
+
 	
-		Debug.Log (FindObjectOfType<PlayerController>().model.transform.localScale.magnitude);
+		Debug.Log (playerScale.magnitude);
 	
 	
 
@@ -34,7 +36,7 @@ public class PickupController : MonoBehaviour {
 
 		Debug.Log ("boop");
 
-		if (collision.gameObject.tag == "Player" && FindObjectOfType<PlayerController>().model.transform.localScale.magnitude >= playerSizeNeeded) {
+		if (collision.gameObject.tag == "Player" && playerScale.magnitude >= playerSizeNeeded) {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
 
 			//remove the rigidbody of the picked up item to prevent physics issues

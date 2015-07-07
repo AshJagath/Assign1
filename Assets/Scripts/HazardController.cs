@@ -8,7 +8,7 @@ public class HazardController : MonoBehaviour {
 	public GameObject player;
 	public float explosForce;
 	public float explosRadius;
-
+	public float growthRate;
 
 	// Use this for initialization
 	void Start () {
@@ -44,10 +44,12 @@ public class HazardController : MonoBehaviour {
 
 	
 		if (collision.gameObject.tag == "Player" && playerTransform.transform.localScale.magnitude < playerSizeNeeded) {
+
 			Detach();		
-					
-		
-		}
+
+			FindObjectOfType<PlayerController>().model.transform.localScale += new Vector3(growthRate, growthRate, growthRate);
+
+			}
 
 
 
