@@ -23,7 +23,7 @@ public class PickupController : MonoBehaviour {
 		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
 
 	
-		Debug.Log (playerScale.magnitude);
+		Debug.Log (playerScale.x);
 	
 	
 
@@ -35,7 +35,7 @@ public class PickupController : MonoBehaviour {
 
 		Debug.Log ("boop");
 
-		if (collision.gameObject.tag == "Player" && playerScale.magnitude >= playerSizeNeeded) {
+		if (collision.gameObject.tag == "Player" && playerScale.x >= playerSizeNeeded) {
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
 
 			//remove the rigidbody of the picked up item to prevent physics issues

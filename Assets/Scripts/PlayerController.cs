@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour {
 
 	void PlayerScaleLimit(){
 
-		if (model.transform.localScale.magnitude <= minimumScale) {
+		if (model.transform.localScale.x <= minimumScale) {
 	
 			model.transform.localScale = new Vector3(minimumScale, minimumScale, minimumScale);
 		
