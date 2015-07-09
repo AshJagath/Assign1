@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public float turnSpeed = 10;
 	//public int BallSize;
 	public GameObject model;
+	public float minimumScale;
 
 	//private GameObject Player;
 
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-
+		PlayerScaleLimit ();
 
 	}
 
@@ -67,6 +68,17 @@ public class PlayerController : MonoBehaviour {
 	}
 
 
+	void PlayerScaleLimit(){
+
+		if (model.transform.localScale.magnitude <= minimumScale) {
+	
+			model.transform.localScale = new Vector3(minimumScale, minimumScale, minimumScale);
+		
+		}
+	
+
+
+	}
 
 
 
