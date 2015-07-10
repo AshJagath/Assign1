@@ -8,6 +8,8 @@ public class PauseController : MonoBehaviour {
 	private bool isPaused;
 	public GameObject pauseScreen;
 	private float timePause;
+	public Button exitButton;
+	public Button restartButton;
 
 
 	// Use this for initialization
@@ -27,8 +29,8 @@ public class PauseController : MonoBehaviour {
 		Time.timeScale = timePause;
 		//Time.fixedDeltaTime = timePause;
 
-			
 		PauseScreen ();
+
 		PauseTime ();
 	}
 
@@ -58,6 +60,11 @@ public class PauseController : MonoBehaviour {
 			}
 	}
 
+	//void Onclick(){
 
+		//exitButton.onClick
+
+			
+	//}
 
 }

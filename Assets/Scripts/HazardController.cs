@@ -51,6 +51,7 @@ public class HazardController : MonoBehaviour {
 
 			FindObjectOfType<PlayerController>().model.transform.localScale += new Vector3(damage, damage, damage);
 
+			audio.Play();
 			}
 
 

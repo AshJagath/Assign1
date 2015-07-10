@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		audio.Play ();
 
 		//initialise gravity value
 		Physics.gravity = new Vector3(0, -gravity, 0);

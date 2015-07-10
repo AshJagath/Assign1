@@ -47,7 +47,8 @@ public class PickupController : MonoBehaviour {
 
 			//increase the player objects scale by the pickup items growth rate
 			FindObjectOfType<PlayerController>().model.transform.localScale += new Vector3(growthRate, growthRate, growthRate);
-		
+
+			audio.Play();
 		}
 
 		//if(collision.gameObject.tag == "Player")
