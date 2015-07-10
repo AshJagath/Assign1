@@ -20,6 +20,7 @@ public class PickupController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//get the players current model size
 		playerScale = FindObjectOfType<PlayerController>().model.transform.localScale;
 
 	
@@ -36,6 +37,8 @@ public class PickupController : MonoBehaviour {
 			//for the oject to stick it needs to collide with the player and the player must be a of a certain size
 		if (collision.gameObject.tag == "Player" && playerScale.x >= playerSizeNeeded) {
 
+
+
 			//transform teh pickup object to be a cbild of teh player which makes it 'stick' on contact
 			transform.parent = GameObject.FindGameObjectWithTag ("Player").transform;
 
@@ -48,6 +51,7 @@ public class PickupController : MonoBehaviour {
 			//increase the player objects scale by the pickup items growth rate
 			FindObjectOfType<PlayerController>().model.transform.localScale += new Vector3(growthRate, growthRate, growthRate);
 
+			//play the pickup sfx
 			audio.Play();
 		}
 

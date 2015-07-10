@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 	//public int BallSize;
 	public GameObject model;
 	public float minimumScale;
-
+	public Vector3 size;
 	//private GameObject Player;
 
 	// Use this for initialization
@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 		
 		Debug.Log ("bump");
-		
+		//play audio file on collision
+		audio.Play ();
+
 		//if (collision.gameObject.tag == "PickUp" && BallSize >= ) {
 
 			//collider.enabled = false;
