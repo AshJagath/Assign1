@@ -5,9 +5,10 @@ public class GameController : MonoBehaviour {
 
 
 	public float gravity;
-	public float timeLimit = 180;
+	public float timeLimit;
 	public float timeLeft;
-	private bool isPaused;
+
+
 
 
 	// Use this for initialization
@@ -25,42 +26,36 @@ public class GameController : MonoBehaviour {
 	
 		//
 
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+		
+		TimeDecrease ();
 	}
 
 
 
 	void LoadOverlay(){
 	
-		//
+		// LOAD THE HUD
 		Application.LoadLevelAdditive("UIOverlay");
 
-		//
+		//LOAD UP PAUSE SCREEN
 		Application.LoadLevelAdditive ("PauseScreen");
 
+		//
+
+
 	}
 
-	void Pause(){
-
-		if (Input.GetKeyDown ("Space")) {
-
-		
-
-				}
-
-
 	
-	
-	}
 
-	// Update is called once per frame
-	void Update () {
-	
-		TimeDecrease ();
-	}
 
 
 	void TimeDecrease(){
-
+		// decrase remaining time my 1 every actual second
 		timeLeft -=1*Time.deltaTime;
 
 	}
